@@ -18,19 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fahrenheit" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-Xr-qOB">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fahrenheit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-Xr-qOB">
                                 <rect key="frame" x="127" y="132" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="fahrChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="0Xr-9T-dbD"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Celsius" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17R-QU-UYs">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Celsius" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17R-QU-UYs">
                                 <rect key="frame" x="127" y="222" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="celsiusChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="SgT-Mi-c2G"/>
+                                </connections>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-eq-bna">
                                 <rect key="frame" x="117" y="260" width="118" height="30"/>
@@ -41,7 +47,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show me the weather!"/>
                                 <connections>
-                                    <segue destination="dKS-uB-4Z2" kind="show" id="Opf-88-c6i"/>
+                                    <action selector="nextPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JBs-92-R54"/>
+                                    <segue destination="dKS-uB-4Z2" kind="show" id="PYI-dG-gIx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,6 +56,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="M57-Dz-38o"/>
+                    <connections>
+                        <outlet property="celsius" destination="17R-QU-UYs" id="frE-jk-fmE"/>
+                        <outlet property="fahr" destination="Z67-Xr-qOB" id="dFV-Mg-f5P"/>
+                        <outlet property="tempSlider" destination="8bC-Xf-vdC" id="G3j-fh-gvE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVP-l9-QGD">
-                                <rect key="frame" x="285" y="110" width="29" height="21"/>
+                                <rect key="frame" x="285" y="110" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -89,6 +101,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Oj-kH-MUd"/>
                     </view>
+                    <connections>
+                        <outlet property="tempImage" destination="zis-X2-Fg8" id="BWb-5S-hIW"/>
+                        <outlet property="tempLabel" destination="aVP-l9-QGD" id="TKX-6W-zTu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWm-JS-Wvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

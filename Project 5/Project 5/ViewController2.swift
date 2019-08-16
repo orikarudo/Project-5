@@ -10,9 +10,24 @@ import UIKit
 
 class ViewController2: UIViewController {
 
+    @IBOutlet weak var tempLabel: UILabel!
+    var temp = ""
+    @IBOutlet weak var tempImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tempLabel.text = self.temp
+        
+        let dTemp = Double(self.temp)
+        
+        if(dTemp! < 40.0){
+            
+        }
+        else if(dTemp! >= 40.0 && dTemp! < 75.0){
+            
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     
