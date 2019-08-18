@@ -21,13 +21,15 @@ class ViewController2: UIViewController {
         let dTemp = Double(self.temp)
         
         if(dTemp! < 40.0){
-            
+            tempImage.image = UIImage(named: "snowman")
         }
         else if(dTemp! >= 40.0 && dTemp! < 75.0){
-            
+            tempImage.image = UIImage(named: "spring")
         }
         
-        
+        else {
+            tempImage.image = UIImage(named: "summerDay")
+        }
         // Do any additional setup after loading the view.
     }
     
