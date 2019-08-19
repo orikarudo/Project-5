@@ -38,9 +38,12 @@
                                     <action selector="celsiusChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="SgT-Mi-c2G"/>
                                 </connections>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-eq-bna">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="-50" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-eq-bna">
                                 <rect key="frame" x="117" y="260" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="aEn-65-wIv"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b9-0k-cj1">
                                 <rect key="frame" x="100" y="347" width="153" height="30"/>
@@ -59,7 +62,7 @@
                     <connections>
                         <outlet property="celsius" destination="17R-QU-UYs" id="frE-jk-fmE"/>
                         <outlet property="fahr" destination="Z67-Xr-qOB" id="dFV-Mg-f5P"/>
-                        <outlet property="tempSlider" destination="8bC-Xf-vdC" id="G3j-fh-gvE"/>
+                        <outlet property="tempSlider" destination="9Tp-eq-bna" id="RHv-td-dQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,6 +85,9 @@
                                 <rect key="frame" x="113" y="552" width="175" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="NeK-I1-tD1" kind="show" id="2bI-kd-vlc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The current temperature is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dm-RF-PSc">
                                 <rect key="frame" x="72" y="110" width="205" height="21"/>
@@ -110,6 +116,27 @@
             </objects>
             <point key="canvasLocation" x="1937.68115942029" y="137.94642857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="qqA-JS-Hpt">
+            <objects>
+                <viewController id="NeK-I1-tD1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yyv-ej-Ddf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thankYou" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-rC-lQd">
+                                <rect key="frame" x="40" y="129" width="340" height="385"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.94881282388835064" blue="0.5484075047306689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="cfr-nm-lGJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJN-BJ-H0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2744.9275362318845" y="137.94642857142856"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9bQ-39-FsZ">
             <objects>
@@ -129,4 +156,7 @@
             <point key="canvasLocation" x="73.913043478260875" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="thankYou" width="225" height="225"/>
+    </resources>
 </document>

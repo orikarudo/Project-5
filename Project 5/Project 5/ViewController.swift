@@ -14,8 +14,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var celsius: UITextField!
     
-    @IBOutlet var tempSlider: UIView!
+ 
+    @IBOutlet weak var tempSlider: UISlider!
     
+    @IBAction func slider(_ sender: UISlider) {
+        fahr.text? = NSString(format: "%.2f", sender.value) as String
+        fahrChanged(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,9 @@ class ViewController: UIViewController {
             holder = holder! * 5
             holder = holder! / 9
             celsius.text = NSString(format: "%.2f", holder!) as String
+            tempSlider.value = Float(fahr.text!) as! Float
         }
+        
         
         
     }
@@ -43,6 +50,7 @@ class ViewController: UIViewController {
             holder = holder! * 9/5
             holder = holder! + 32
             fahr.text = NSString(format: "%.2f", holder!) as String
+            tempSlider.value = Float(fahr.text!) as! Float
         }
         
     }
